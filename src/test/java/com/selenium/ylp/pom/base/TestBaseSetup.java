@@ -13,7 +13,7 @@ public class TestBaseSetup {
 
 	
 	private WebDriver driver;
-	static String driverPath = ".\\src\\test\\resources\\browser\\";
+	static String driverPath = "F:\\MVCSpring\\YLPPOMFW\\src\\test\\resources\\browser\\";
 	
 	//Method to get the WebDriver object.
 	public WebDriver getDriver(){
