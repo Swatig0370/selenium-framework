@@ -7,13 +7,15 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
 	
+	protected WebDriver driver;
+	
 	public HomePage(WebDriver driver) {
 	
 		// Create an object of pagefactory and assign the webdriver objcet. 
 				PageFactory.initElements(driver, this);
 	}
 	
-	//Create the list of webelements on Home Page.
+	//Create the list of web Elements on Home Page.
 	
 	//Home Page link in YourLogo image.
 	@FindBy(id = "header_logo")
@@ -125,4 +127,40 @@ public class HomePage {
 		{
 			tShirtsTab.click();
 		}
+		
+		//Feature methods
+		public String getPageTitle(){
+			String title = driver.getTitle();
+			return title;
+		}
+		
+		public boolean verifyBasePageTitle(){
+			String expectedPageTitle = "My Store";
+			return getPageTitle().contains(expectedPageTitle);
+		}
+		
+		//Navigation methods
+		public ContactUsPage clickContactUsBtn(){
+			System.out.println("Clicking on Contact us button");
+			
+			if(contactUsLink.isDisplayed()|| contactUsLink.isEnabled())
+			contactUsLink.click();
+			
+			else 
+			System.out.println("Element not found !!");
+			return new ContactUsPage(driver);
+		}
+		
+		public SignInPage clickSignInBtn(){
+			System.out.println("Clicking on Signin button");
+			
+			if(singInLink.isDisplayed()|| singInLink.isEnabled())
+				singInLink.click();
+			
+			else 
+			System.out.println("Element not found !!");
+			return new SignInPage(driver);
+		}
+				
+		
 }
