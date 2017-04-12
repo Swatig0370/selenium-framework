@@ -29,8 +29,6 @@ public class HomePageTest extends TestBaseSetup{
 		HomePage homepage = new HomePage(driver);
 		Assert.assertTrue(homepage.verifyBasePageTitle(),"Home page title doesn't match");
 	}
-	
-	
-	
+		
 	
 	}

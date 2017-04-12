@@ -5,7 +5,8 @@
 <parameter name = "browserType" value="CH" />
 	<test name ="sample test">
 		<classes>
-			<class name = "com.selenium.ylp.pom.test.HomePageTest"/>
+		    <class name = "com.selenium.ylp.pom.test.HomePageTest"/>
+			<class name = "com.selenium.ylp.pom.test.ContactUsPageTest"/>
 		</classes>
 	</test>
 </suite>

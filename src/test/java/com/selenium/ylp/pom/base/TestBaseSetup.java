@@ -76,6 +76,7 @@ public class TestBaseSetup {
 					
 		}
 		
+		
 		@AfterClass
 		public void tearDown(){
 			driver.quit();
