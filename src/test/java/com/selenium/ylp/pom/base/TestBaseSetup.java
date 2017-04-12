@@ -69,6 +69,7 @@ public class TestBaseSetup {
 		}
 	
 		@Parameters({"browserType", "appURL"})
+		//@BeforeSuite
 		@BeforeClass
 		public void initializeTestBaseSetup(String browserType, String appURL){
 			
@@ -78,6 +79,7 @@ public class TestBaseSetup {
 		
 		
 		@AfterClass
+		//@AfterSuite
 		public void tearDown(){
 			driver.quit();
 		}

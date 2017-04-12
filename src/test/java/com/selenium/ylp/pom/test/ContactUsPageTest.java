@@ -3,7 +3,6 @@ package com.selenium.ylp.pom.test;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.selenium.ylp.pom.base.TestBaseSetup;
@@ -24,14 +23,14 @@ public class ContactUsPageTest extends TestBaseSetup {
 		
 	}
 	
-	@BeforeTest
+	@Test
 	public void OpenConatctUsPage(){
 		
 		homepage = new HomePage(driver);
 		contact = homepage.clickContactUsBtn();
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 1, dependsOnMethods = {"OpenConatctUsPage"})
 	public void verifyContactUs(){
 		
 		
